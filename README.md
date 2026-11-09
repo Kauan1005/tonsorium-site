@@ -1,7 +1,48 @@
-# Tonsorium — Site
+# Tonsorium — Site da barbearia
 
-Site público. HTML/CSS puro + scripts que buscam o conteúdo no Supabase (o
-mesmo banco que o painel admin edita). Não precisa de build.
+Site público de uma barbearia real em Itapevi/SP, no ar em
+[tonsorium.netlify.app](https://tonsorium.netlify.app). Todo o conteúdo vem do
+banco e é editado pelo dono no painel; o cliente escolhe serviço, barbeiro, dia e
+horário, vê na hora quais horários já estão ocupados e envia o pedido pronto
+pelo WhatsApp.
+
+- Painel administrativo: [tonsorium-admin](https://github.com/Kauan1005/tonsorium-admin)
+- Stack: HTML, CSS e JavaScript (módulos ES, sem framework e sem build) · Supabase · Netlify
+
+## Destaques
+
+- **Sem build, sem framework.** Páginas estáticas com módulos ES; o conteúdo
+  padrão já vem no HTML (bom para o Google e para quando o banco não responde) e
+  é substituído pelo conteúdo do banco ao carregar.
+- **Agendamento com horários ocupados.** O site cruza o horário de atendimento
+  com a agenda dos barbeiros e risca o que está ocupado. Com "sem preferência",
+  um horário só aparece ocupado se todos os barbeiros estiverem. O site recebe
+  só início e fim de cada horário, nada sobre os clientes.
+- **Fuso de São Paulo em tudo.** Horários calculados no fuso da barbearia, não
+  no do aparelho de quem visita.
+- **Avaliações em tempo real** com login pelo Google, moderação e limite contra
+  spam aplicados no banco.
+- **Privacidade desde o primeiro acesso.** Nenhum cookie próprio; fontes e
+  biblioteca servidas pelo próprio site; o mapa do Google só carrega quando o
+  visitante pede. Por isso o site não precisa de banner de cookies. Política de
+  Privacidade e Termos de Uso conforme a LGPD.
+- **Segurança.** Content-Security-Policy restrita ao próprio domínio, tudo que
+  vem do banco é escapado antes de ir para a tela e links externos são validados.
+- **Acessibilidade.** Navegação por teclado, contraste revisado e áreas de toque
+  pensadas para o celular.
+
+## Direitos
+
+© 2026 Kauan ([@Kauan1005](https://github.com/Kauan1005)). Código publicado para
+fins de portfólio: você pode ler e estudar, mas **todos os direitos são
+reservados** e o código não pode ser copiado nem reutilizado sem autorização. A
+marca, o logotipo, as fotos e os textos da Tonsorium pertencem à barbearia. As
+fontes (licença SIL OFL 1.1) e a biblioteca do Supabase (licença MIT) seguem as
+licenças de seus autores.
+
+---
+
+# Guia técnico
 
 ## Arquivos
 - `index.html` — estrutura da página (já com o conteúdo padrão, que aparece
