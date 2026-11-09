@@ -802,7 +802,7 @@ async function loadGoogle() {
 
   const mapsUri = safeUrl(place.maps_uri);
   els.summaryGoogle.innerHTML = `
-    <span class="summary-score">${String(place.rating).replace('.', ',')}</span>
+    <span class="summary-score">${formatScore(place.rating)}</span>
     ${starsHtml(place.rating)}
     <span class="summary-label">${place.user_rating_count ?? 0} avaliações no Google</span>`;
   if (mapsUri) els.summaryGoogle.href = mapsUri;
